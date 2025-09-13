@@ -20,16 +20,16 @@ const userSchema = new Schema({
   },
   class: {
     type: String,
-    required: function() { return this.role === 'student'; }
+    required: function() { return this.role === 'student' && this.studentId; }
   },
   section: String,
   fullName: {
     type: String,
-    required: function() { return this.role === 'student'; }
+    required: function() { return this.role === 'student' && this.studentId; }
   },
   rollNumber: {
     type: Number,
-    required: function() { return this.role === 'student'; }
+    required: function() { return this.role === 'student' && this.studentId; }
   },
   parentName: String,
   parentPhone: String,
